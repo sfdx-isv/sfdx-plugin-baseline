@@ -19,35 +19,45 @@ Example of the auto-generated output of the sfdx plugins:generate command. Allow
 <!-- usage -->
 ```sh-session
 $ npm install -g sfdx-plugin-baseline
-$ sfdx-plugin-baseline COMMAND
+$ sfdx COMMAND
 running command...
-$ sfdx-plugin-baseline (-v|--version|version)
+$ sfdx (-v|--version|version)
 sfdx-plugin-baseline/0.0.0 darwin-x64 node-v10.12.0
-$ sfdx-plugin-baseline --help [COMMAND]
+$ sfdx --help [COMMAND]
 USAGE
-  $ sfdx-plugin-baseline COMMAND
+  $ sfdx COMMAND
 ...
 ```
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx-plugin-baseline hello:org [FILE]`](#sfdx-plugin-baseline-helloorg-file)
+* [`sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-helloorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
-## `sfdx-plugin-baseline hello:org [FILE]`
+## `sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 print a greeting and your org IDs
 
 ```
 USAGE
-  $ sfdx-plugin-baseline hello:org [FILE]
+  $ sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel 
+  trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
-  -f, --force                                      example boolean flag
-  -n, --name=name                                  name to print
-  -u, --targetusername=targetusername              username or alias for the target org; overrides default target org
-  -v, --targetdevhubusername=targetdevhubusername  username or alias for the dev hub org; overrides default dev hub org
-  --apiversion=apiversion                          override the api version used for api requests made by this command
-  --json                                           format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal)   logging level for this command invocation
+  -f, --force                                                                       example boolean flag
+  -n, --name=name                                                                   name to print
+
+  -u, --targetusername=targetusername                                               username or alias for the target
+                                                                                    org; overrides default target org
+
+  -v, --targetdevhubusername=targetdevhubusername                                   username or alias for the dev hub
+                                                                                    org; overrides default dev hub org
+
+  --apiversion=apiversion                                                           override the api version used for
+                                                                                    api requests made by this command
+
+  --json                                                                            format output as json
+
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
+                                                                                    this command invocation
 
 EXAMPLES
   $ sfdx hello:org --targetusername myOrg@example.com --targetdevhubusername devhub@org.com

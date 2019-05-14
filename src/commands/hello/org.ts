@@ -1,12 +1,13 @@
-import {core, flags, SfdxCommand} from '@salesforce/command';
-import {AnyJson} from '@salesforce/ts-types';
+import { flags, SfdxCommand } from '@salesforce/command';
+import { Messages, SfdxError } from '@salesforce/core';
+import { AnyJson } from '@salesforce/ts-types';
 
 // Initialize Messages with the current plugin directory
-core.Messages.importMessagesDirectory(__dirname);
+Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = core.Messages.loadMessages('sfdx-plugin-baseline', 'org');
+const messages = Messages.loadMessages('sfdx-plugin-baseline', 'org');
 
 export default class Org extends SfdxCommand {
 
@@ -58,7 +59,7 @@ export default class Org extends SfdxCommand {
     // Organization will always return one result, but this is an example of throwing an error
     // The output and --json will automatically be handled for you.
     if (!result.records || result.records.length <= 0) {
-      throw new core.SfdxError(messages.getMessage('errorNoOrgResults', [this.org.getOrgId()]));
+      throw new SfdxError(messages.getMessage('errorNoOrgResults', [this.org.getOrgId()]));
     }
 
     // Organization always only returns one result
